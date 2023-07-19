@@ -7,7 +7,6 @@ function AddressPage() {
   const [addresses, setAddresses] = useState([]);
 
   useEffect(() => {
-    console.log("IM HERE")
     setAddresses([])
     axios.get('https://randomuser.me/api/?results=50').then((res) => {
       setAddresses((prevAddresses) => [...prevAddresses, ...res.data.results]);
