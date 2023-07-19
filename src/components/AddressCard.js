@@ -14,7 +14,7 @@ function AddressCard(props) {
   }
   return (
     <Grid container item xl={12} lg={12} md={12} sm={12} xs={12}   maxWidth={'xl'} alignItems={"center"} justifyContent={"center"} direction={'row'} spacing={2}>
-      <Button sx={{justifyContent: 'flex-start', textTransform: 'none'}} fullWidth={true} ripple={false} onClick = {openDialog}>
+      <Button sx={{justifyContent: 'flex-start', textTransform: 'none'}} fullWidth={true} ripple={false} onClick = {openDialog} data-testid = "address-card-btn">
         <Grid item>
           <img alt={"thumbnail"} src={img}/>
         </Grid>
@@ -25,7 +25,7 @@ function AddressCard(props) {
           <Typography variant={'h4'}>{lastName}</Typography>
         </Grid>
       </Button>
-      <Dialog open={open} onClose = {closeDialog}>
+      <Dialog open={open} onClose = {closeDialog} data-testid={'address-card-dialog'}>
         <DialogTitle>
           <Typography textAlign={'center'} variant={'h4'}>{title} {firstName} {lastName}</Typography>
         </DialogTitle>
@@ -43,7 +43,7 @@ function AddressCard(props) {
           </Grid>
         </DialogContent>
         <DialogActions>
-          <Button onClick={closeDialog}>
+          <Button onClick={closeDialog} data-testid = "address-card-close-btn">
             <Typography variant={'h6'}>Close</Typography>
           </Button>
         </DialogActions>
